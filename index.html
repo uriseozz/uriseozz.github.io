@@ -4,15 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>서크크 · seozz</title>
-  <meta name="description" content="앱 만들고, 부업하고, 기록합니다 — 서크크의 링크 모음." />
+  <meta name="description" content="비전공 문과생에서 개발자로. 지금은 직접 앱과 서비스를 만드는 메이커, 서크크입니다." />
   <style>
     :root {
-      --blue: #2F6BFF;
-      --ink: #14161C;
-      --sub: #6B7280;
-      --line: #ECEEF2;
-      --bg: #FBFBFD;
-      --card: #FFFFFF;
+      --blue: #2F6BFF; --ink: #14161C; --sub: #6B7280;
+      --line: #ECEEF2; --bg: #FBFBFD; --card: #FFFFFF;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -24,7 +20,7 @@
 
     /* ── Hero ── */
     header {
-      padding: 72px 0 40px; text-align: center;
+      padding: 68px 0 28px; text-align: center;
       background: radial-gradient(900px 360px at 50% -140px, rgba(47,107,255,0.13), transparent);
     }
     .avatar {
@@ -35,20 +31,28 @@
     }
     h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.4px; }
     .handle { color: var(--blue); font-weight: 700; font-size: 14px; margin-top: 4px; }
-    .lede { font-size: 15.5px; color: var(--sub); margin-top: 14px; }
+    .lede { font-size: 15.5px; color: var(--sub); margin-top: 14px; max-width: 460px; margin-left: auto; margin-right: auto; }
+
+    /* ── Now strip ── */
+    .now {
+      margin: 22px auto 4px; display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      justify-content: center; font-size: 13.5px; font-weight: 600; color: #3A4658;
+      background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px;
+    }
+    .now b { color: var(--blue); font-weight: 700; }
 
     /* ── Section ── */
-    section { padding: 30px 0 8px; }
+    section { padding: 26px 0 6px; }
     .sec-title {
       font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
       color: #A2A8B2; margin-bottom: 14px; padding-left: 4px;
     }
     .grid { display: grid; gap: 12px; }
 
-    /* ── Link / project row ── */
+    /* ── Row card ── */
     .row {
-      display: flex; gap: 16px; align-items: center; text-decoration: none; color: inherit;
-      background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px;
+      display: flex; gap: 15px; align-items: center; text-decoration: none; color: inherit;
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 15px 17px;
       transition: transform .13s ease, box-shadow .13s ease, border-color .13s ease;
     }
     .row:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(20,22,28,0.07); border-color: #DCE1E9; }
@@ -56,25 +60,30 @@
       flex-shrink: 0; width: 46px; height: 46px; border-radius: 13px; font-size: 24px;
       display: flex; align-items: center; justify-content: center; background: #F3F5F9;
     }
+    .ic img { width: 22px; height: 22px; display: block; }
     .ic.ig { background: linear-gradient(135deg,#FEDA75,#FA7E1E,#D62976,#962FBF); }
-    .ic.yt { background: #FF3D3D; }
+    .ic.yt { background: #FF0000; }
     .ic.nv { background: #03C75A; }
-    .ic.ts { background: #EB5A36; }
+    .ic.ts { background: #EB531C; }
     .ic.br { background: linear-gradient(135deg,#2F6BFF,#5B8Cff); }
     .body { flex: 1; min-width: 0; }
-    .body h3 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
+    .body h3 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+    .body h3 .muted { font-weight: 600; color: #9AA0AB; font-size: 13px; }
     .body p { font-size: 13.5px; color: var(--sub); margin-top: 2px; }
     .pill { font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
     .pill.live { color: #128A50; background: #E7F7EE; }
     .pill.soon { color: #B4690E; background: #FCF1E1; }
+    .stat { flex-shrink: 0; text-align: right; line-height: 1.15; }
+    .stat b { display: block; font-size: 16px; font-weight: 800; }
+    .stat span { font-size: 11px; color: #9AA0AB; }
     .arw { color: #C7CBD3; font-size: 18px; flex-shrink: 0; }
 
     footer { padding: 34px 0 60px; margin-top: 26px; border-top: 1px solid var(--line); color: var(--sub); font-size: 13px; text-align: center; }
     footer a { color: var(--sub); }
 
     @media (max-width: 480px) {
-      header { padding: 52px 0 32px; }
-      .row { padding: 14px 15px; gap: 13px; }
+      header { padding: 50px 0 24px; }
+      .row { padding: 13px 14px; gap: 12px; }
     }
   </style>
 </head>
@@ -84,7 +93,8 @@
       <div class="avatar">🧑‍💻</div>
       <h1>서크크</h1>
       <div class="handle">@seozz_time</div>
-      <p class="lede">앱 만들고, 부업하고, 기록합니다.</p>
+      <p class="lede">문과 비전공자로 시작해 4년차 개발자가 됐어요.<br />지금은 직접 앱과 서비스를 만듭니다.</p>
+      <div class="now">🛠 요즘 만드는 것 &nbsp;·&nbsp; <b>로또당</b> · <b>블로그 전자책</b> · <b>블라잇</b></div>
     </div>
   </header>
 
@@ -113,6 +123,15 @@
           <div class="arw">→</div>
         </a>
 
+        <a class="row" href="https://smartstore.naver.com/note_n_cheat/products/13672788709">
+          <div class="ic">📖</div>
+          <div class="body">
+            <h3>블로그 전자책 <span class="pill live">판매중</span></h3>
+            <p>블로그로 수익 내는 노하우를 담은 전자책</p>
+          </div>
+          <div class="arw">→</div>
+        </a>
+
       </div>
     </section>
 
@@ -122,37 +141,37 @@
       <div class="grid">
 
         <a class="row" href="https://www.instagram.com/seozz_time">
-          <div class="ic ig">📸</div>
+          <span class="ic ig"><img src="icons/instagram.svg" alt="Instagram" /></span>
           <div class="body">
             <h3>인스타그램</h3>
-            <p>직장인 부업·N잡 수익 파이프라인 이야기</p>
+            <p>재테크·수익 파이프라인을 기록해요</p>
           </div>
-          <div class="arw">→</div>
+          <div class="stat"><b>1.2만</b><span>팔로워</span></div>
         </a>
 
         <a class="row" href="https://www.youtube.com/@seozz_time">
-          <div class="ic yt">▶️</div>
+          <span class="ic yt"><img src="icons/youtube.svg" alt="YouTube" /></span>
           <div class="body">
             <h3>유튜브</h3>
-            <p>부업·재테크 노하우를 영상으로</p>
+            <p>재테크·사이드 프로젝트 이야기를 영상으로</p>
           </div>
-          <div class="arw">→</div>
+          <div class="stat"><b>9.4천</b><span>구독자</span></div>
         </a>
 
         <a class="row" href="https://blog.naver.com/iyoule">
-          <div class="ic nv">📗</div>
+          <span class="ic nv"><img src="icons/naver.svg" alt="Naver" /></span>
           <div class="body">
             <h3>네이버 블로그</h3>
-            <p>부업·재테크·일상 기록</p>
+            <p>재테크·일상 기록</p>
           </div>
-          <div class="arw">→</div>
+          <div class="stat"><b>2천</b><span>이웃</span></div>
         </a>
 
         <a class="row" href="https://yuricoding.tistory.com/">
-          <div class="ic ts">💻</div>
+          <span class="ic ts"><img src="icons/tistory.svg" alt="Tistory" /></span>
           <div class="body">
-            <h3>개발 블로그 <span style="font-weight:600;color:#9AA0AB;font-size:13px;">유리코딩</span></h3>
-            <p>백엔드·스프링·스타트업 실무 개발 기록</p>
+            <h3>개발 블로그 <span class="muted">유리코딩</span></h3>
+            <p>백엔드·스프링·실무 개발 기록</p>
           </div>
           <div class="arw">→</div>
         </a>
