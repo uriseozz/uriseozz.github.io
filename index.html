@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>앤모어 · 앱 포트폴리오</title>
-  <meta name="description" content="작지만 쓸모있는 앱을 만드는 앤모어의 포트폴리오." />
+  <title>서크크 · seozz</title>
+  <meta name="description" content="앱 만들고, 부업하고, 기록합니다 — 서크크의 링크 모음." />
   <style>
     :root {
       --blue: #2F6BFF;
@@ -18,110 +18,144 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, sans-serif;
-      background: var(--bg); color: var(--ink); line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
+      background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 0 22px; }
 
     /* ── Hero ── */
     header {
-      padding: 88px 0 56px;
-      background:
-        radial-gradient(1200px 400px at 50% -120px, rgba(47,107,255,0.12), transparent);
+      padding: 72px 0 40px; text-align: center;
+      background: radial-gradient(900px 360px at 50% -140px, rgba(47,107,255,0.13), transparent);
     }
-    .badge {
-      display: inline-block; font-size: 13px; font-weight: 700; color: var(--blue);
-      background: rgba(47,107,255,0.10); padding: 6px 14px; border-radius: 999px; letter-spacing: .2px;
+    .avatar {
+      width: 84px; height: 84px; border-radius: 26px; margin: 0 auto 18px;
+      display: flex; align-items: center; justify-content: center; font-size: 42px;
+      background: linear-gradient(135deg, #EAF1FF, #DDE9FF);
+      box-shadow: 0 10px 24px rgba(47,107,255,0.18);
     }
-    h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.5px; margin: 18px 0 12px; }
-    .lede { font-size: 17px; color: var(--sub); max-width: 520px; }
-    .links { margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap; }
-    .links a {
-      font-size: 14px; font-weight: 600; text-decoration: none; padding: 11px 18px;
-      border-radius: 11px; border: 1px solid var(--line); color: var(--ink); background: #fff;
-      transition: transform .12s ease, border-color .12s ease;
-    }
-    .links a.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
-    .links a:hover { transform: translateY(-1px); border-color: var(--blue); }
+    h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.4px; }
+    .handle { color: var(--blue); font-weight: 700; font-size: 14px; margin-top: 4px; }
+    .lede { font-size: 15.5px; color: var(--sub); margin-top: 14px; }
 
     /* ── Section ── */
-    section { padding: 44px 0; }
+    section { padding: 30px 0 8px; }
     .sec-title {
-      font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--sub); margin-bottom: 22px;
+      font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
+      color: #A2A8B2; margin-bottom: 14px; padding-left: 4px;
     }
+    .grid { display: grid; gap: 12px; }
 
-    /* ── Project cards ── */
-    .grid { display: grid; gap: 16px; }
-    .proj {
-      display: flex; gap: 18px; align-items: flex-start; text-decoration: none; color: inherit;
-      background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px;
-      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    /* ── Link / project row ── */
+    .row {
+      display: flex; gap: 16px; align-items: center; text-decoration: none; color: inherit;
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px;
+      transition: transform .13s ease, box-shadow .13s ease, border-color .13s ease;
     }
-    .proj:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(20,22,28,0.07); border-color: #DfE3EA; }
-    .icon {
-      flex-shrink: 0; width: 56px; height: 56px; border-radius: 14px; font-size: 30px;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, #EAF1FF, #F4F8FF); box-shadow: inset 0 0 0 1px rgba(47,107,255,0.10);
+    .row:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(20,22,28,0.07); border-color: #DCE1E9; }
+    .ic {
+      flex-shrink: 0; width: 46px; height: 46px; border-radius: 13px; font-size: 24px;
+      display: flex; align-items: center; justify-content: center; background: #F3F5F9;
     }
-    .proj h3 { font-size: 18px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-    .pill { font-size: 11px; font-weight: 700; color: #128A50; background: #E7F7EE; padding: 2px 9px; border-radius: 999px; }
-    .proj p { font-size: 14.5px; color: var(--sub); margin-top: 5px; }
-    .meta { margin-top: 10px; font-size: 12.5px; color: #9AA0AB; display: flex; gap: 14px; flex-wrap: wrap; }
-    .meta span::before { content: "·"; margin-right: 6px; color: #C7CBD3; }
-    .meta span:first-child::before { content: none; }
+    .ic.ig { background: linear-gradient(135deg,#FEDA75,#FA7E1E,#D62976,#962FBF); }
+    .ic.yt { background: #FF3D3D; }
+    .ic.nv { background: #03C75A; }
+    .ic.ts { background: #EB5A36; }
+    .ic.br { background: linear-gradient(135deg,#2F6BFF,#5B8Cff); }
+    .body { flex: 1; min-width: 0; }
+    .body h3 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
+    .body p { font-size: 13.5px; color: var(--sub); margin-top: 2px; }
+    .pill { font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+    .pill.live { color: #128A50; background: #E7F7EE; }
+    .pill.soon { color: #B4690E; background: #FCF1E1; }
+    .arw { color: #C7CBD3; font-size: 18px; flex-shrink: 0; }
 
-    /* soft placeholder for future work */
-    .soon {
-      border-style: dashed; color: var(--sub); justify-content: center; text-align: center;
-      font-size: 14px; font-weight: 600; padding: 26px; display: block;
-    }
-
-    footer { padding: 40px 0 64px; border-top: 1px solid var(--line); margin-top: 24px; color: var(--sub); font-size: 13.5px; }
+    footer { padding: 34px 0 60px; margin-top: 26px; border-top: 1px solid var(--line); color: var(--sub); font-size: 13px; text-align: center; }
     footer a { color: var(--sub); }
 
-    @media (max-width: 520px) {
-      header { padding: 60px 0 40px; }
-      h1 { font-size: 32px; }
-      .proj { padding: 18px; gap: 14px; }
-      .icon { width: 48px; height: 48px; font-size: 26px; }
+    @media (max-width: 480px) {
+      header { padding: 52px 0 32px; }
+      .row { padding: 14px 15px; gap: 13px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap">
-      <span class="badge">🍀 Indie App Maker</span>
-      <h1>앤모어</h1>
-      <p class="lede">작지만 매일 쓰게 되는 앱을 만듭니다. 데이터로 조금 더 똑똑하게.</p>
-      <div class="links">
-        <a class="primary" href="#works">앱 보기</a>
-        <a href="mailto:andmore25@naver.com">문의하기</a>
-      </div>
+      <div class="avatar">🧑‍💻</div>
+      <h1>서크크</h1>
+      <div class="handle">@seozz_time</div>
+      <p class="lede">앱 만들고, 부업하고, 기록합니다.</p>
     </div>
   </header>
 
   <main class="wrap">
-    <section id="works">
-      <p class="sec-title">Works</p>
+
+    <!-- ══ 프로젝트 ══ -->
+    <section>
+      <p class="sec-title">Projects</p>
       <div class="grid">
 
-        <!-- ▼ 앱 카드 하나 = 이 <a>…</a> 블록. 새 앱 추가하려면 통째로 복사해서 내용만 바꾸세요 -->
-        <a class="proj" href="https://apps.apple.com/kr/app/id6790166167">
-          <div class="icon">🍀</div>
-          <div>
-            <h3>로또당 <span class="pill">출시됨</span></h3>
-            <p>로또 6/45 당첨조회 · 통계분석 · 번호추첨 · 명당찾기를 한 앱에.</p>
-            <div class="meta">
-              <span>iOS · Android</span>
-              <span>Flutter</span>
-              <span>App Store에서 받기 →</span>
-            </div>
+        <a class="row" href="https://apps.apple.com/kr/app/id6790166167">
+          <div class="ic">🍀</div>
+          <div class="body">
+            <h3>로또당 <span class="pill live">iOS 출시</span> <span class="pill soon">Android 심사중</span></h3>
+            <p>로또 6/45 당첨조회 · 통계 · 번호추첨 · 명당찾기</p>
           </div>
+          <div class="arw">→</div>
         </a>
-        <!-- ▲ 여기까지가 카드 하나 -->
 
-        <span class="proj soon">다음 앱을 준비 중이에요 ✨</span>
+        <a class="row" href="https://blawrite.com">
+          <div class="ic br">✍️</div>
+          <div class="body">
+            <h3>블라잇 <span class="pill live">서비스</span></h3>
+            <p>블로그 수익화에 최적화된 네이버 블로그 글 작성기</p>
+          </div>
+          <div class="arw">→</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ══ SNS / 블로그 ══ -->
+    <section>
+      <p class="sec-title">Links</p>
+      <div class="grid">
+
+        <a class="row" href="https://www.instagram.com/seozz_time">
+          <div class="ic ig">📸</div>
+          <div class="body">
+            <h3>인스타그램</h3>
+            <p>직장인 부업·N잡 수익 파이프라인 이야기</p>
+          </div>
+          <div class="arw">→</div>
+        </a>
+
+        <a class="row" href="https://www.youtube.com/@seozz_time">
+          <div class="ic yt">▶️</div>
+          <div class="body">
+            <h3>유튜브</h3>
+            <p>부업·재테크 노하우를 영상으로</p>
+          </div>
+          <div class="arw">→</div>
+        </a>
+
+        <a class="row" href="https://blog.naver.com/iyoule">
+          <div class="ic nv">📗</div>
+          <div class="body">
+            <h3>네이버 블로그</h3>
+            <p>부업·재테크·일상 기록</p>
+          </div>
+          <div class="arw">→</div>
+        </a>
+
+        <a class="row" href="https://yuricoding.tistory.com/">
+          <div class="ic ts">💻</div>
+          <div class="body">
+            <h3>개발 블로그 <span style="font-weight:600;color:#9AA0AB;font-size:13px;">유리코딩</span></h3>
+            <p>백엔드·스프링·스타트업 실무 개발 기록</p>
+          </div>
+          <div class="arw">→</div>
+        </a>
 
       </div>
     </section>
@@ -129,8 +163,7 @@
 
   <footer class="wrap">
     문의 · <a href="mailto:andmore25@naver.com">andmore25@naver.com</a><br />
-    <a href="https://uri-s2.notion.site/39cbd4e3181c8073892dd10221436393">개인정보 처리방침</a>
-    &nbsp;·&nbsp; © 앤모어
+    © 서크크 (seozz)
   </footer>
 </body>
 </html>
