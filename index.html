@@ -34,7 +34,13 @@
     .lede { font-size: 15.5px; color: var(--sub); margin-top: 14px; max-width: 460px; margin-left: auto; margin-right: auto; }
 
     /* ── Stack chips ── */
-    .stack { margin-top: 16px; display: flex; gap: 7px; flex-wrap: wrap; justify-content: center; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .stack { margin: 18px auto 0; display: flex; flex-direction: column; gap: 9px; max-width: 430px; }
+    .sgroup { display: flex; align-items: center; gap: 10px; }
+    .slabel {
+      flex: 0 0 58px; text-align: right; font-size: 10.5px; font-weight: 800;
+      letter-spacing: .4px; text-transform: uppercase; color: #B0B6C0;
+    }
+    .schips { display: flex; gap: 6px; flex-wrap: wrap; }
     .chip {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 12.5px; font-weight: 600; color: #3A4658;
@@ -105,16 +111,41 @@
       <div class="handle">@seozz_time</div>
       <p class="lede">문과 비전공자에서 5년차 개발자로.<br />회사에서 자바·스프링 백엔드로 4년, 지금은 제 앱과 서비스를 만들어요.</p>
       <div class="stack">
-        <span class="chip"><img src="icons/tech/java.svg" alt="" />Java</span>
-        <span class="chip"><img src="icons/tech/spring.svg" alt="" />Spring</span>
-        <span class="chip"><img src="icons/tech/mysql.svg" alt="" />MySQL</span>
-        <span class="chip"><img src="icons/tech/typescript.svg" alt="" />TypeScript</span>
-        <span class="chip"><img src="icons/tech/react.svg" alt="" />React</span>
-        <span class="chip"><img src="icons/tech/flutter.svg" alt="" />Flutter</span>
-        <span class="chip"><img src="icons/tech/docker.svg" alt="" />Docker</span>
-        <span class="chip wm"><img src="icons/tech/aws.svg" alt="AWS" /></span>
-        <span class="chip"><img src="icons/tech/supabase.svg" alt="" />Supabase</span>
-        <span class="chip"><img src="icons/tech/claude.svg" alt="" />Claude AI</span>
+        <div class="sgroup">
+          <span class="slabel">Backend</span>
+          <div class="schips">
+            <span class="chip"><img src="icons/tech/java.svg" alt="" />Java</span>
+            <span class="chip"><img src="icons/tech/spring.svg" alt="" />Spring</span>
+            <span class="chip"><img src="icons/tech/mysql.svg" alt="" />MySQL</span>
+          </div>
+        </div>
+        <div class="sgroup">
+          <span class="slabel">Frontend</span>
+          <div class="schips">
+            <span class="chip"><img src="icons/tech/typescript.svg" alt="" />TypeScript</span>
+            <span class="chip"><img src="icons/tech/react.svg" alt="" />React</span>
+          </div>
+        </div>
+        <div class="sgroup">
+          <span class="slabel">Mobile</span>
+          <div class="schips">
+            <span class="chip"><img src="icons/tech/flutter.svg" alt="" />Flutter</span>
+          </div>
+        </div>
+        <div class="sgroup">
+          <span class="slabel">Cloud</span>
+          <div class="schips">
+            <span class="chip"><img src="icons/tech/aws-icon.svg" alt="" />AWS</span>
+            <span class="chip"><img src="icons/tech/docker.svg" alt="" />Docker</span>
+            <span class="chip"><img src="icons/tech/supabase.svg" alt="" />Supabase</span>
+          </div>
+        </div>
+        <div class="sgroup">
+          <span class="slabel">AI</span>
+          <div class="schips">
+            <span class="chip"><img src="icons/tech/claude.svg" alt="" />Claude AI</span>
+          </div>
+        </div>
       </div>
       <div class="now">🛠 요즘 만드는 것 &nbsp;·&nbsp; <b>로또당</b> · <b>블로그 전자책</b> · <b>블라잇</b></div>
     </div>
