@@ -3,49 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>로또당 · Lotto-dang</title>
+  <title>앤모어 · 앱 포트폴리오</title>
+  <meta name="description" content="작지만 쓸모있는 앱을 만드는 앤모어의 포트폴리오." />
   <style>
+    :root {
+      --blue: #2F6BFF;
+      --ink: #14161C;
+      --sub: #6B7280;
+      --line: #ECEEF2;
+      --bg: #FBFBFD;
+      --card: #FFFFFF;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, sans-serif;
-      background: #F7F8FA; color: #1A1D24; line-height: 1.6;
-      display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px;
+      background: var(--bg); color: var(--ink); line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
-    .card {
-      background: #fff; border-radius: 20px; padding: 40px 32px; max-width: 420px; width: 100%;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.06); text-align: center;
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Hero ── */
+    header {
+      padding: 88px 0 56px;
+      background:
+        radial-gradient(1200px 400px at 50% -120px, rgba(47,107,255,0.12), transparent);
     }
-    .logo { font-size: 44px; }
-    h1 { font-size: 26px; font-weight: 800; margin-top: 12px; }
-    .tag { color: #6B7280; font-size: 15px; margin-top: 6px; }
-    ul { list-style: none; margin: 28px 0; text-align: left; }
-    li { padding: 10px 0; border-bottom: 1px solid #F0F1F4; font-size: 15px; }
-    li:last-child { border-bottom: none; }
-    .em { font-size: 18px; margin-right: 8px; }
-    .btn {
-      display: inline-block; margin-top: 8px; padding: 14px 28px; border-radius: 12px;
-      background: #2F6BFF; color: #fff; text-decoration: none; font-weight: 700; font-size: 15px;
+    .badge {
+      display: inline-block; font-size: 13px; font-weight: 700; color: var(--blue);
+      background: rgba(47,107,255,0.10); padding: 6px 14px; border-radius: 999px; letter-spacing: .2px;
     }
-    .foot { margin-top: 24px; font-size: 13px; color: #9AA0AB; }
-    .foot a { color: #6B7280; }
+    h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.5px; margin: 18px 0 12px; }
+    .lede { font-size: 17px; color: var(--sub); max-width: 520px; }
+    .links { margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a {
+      font-size: 14px; font-weight: 600; text-decoration: none; padding: 11px 18px;
+      border-radius: 11px; border: 1px solid var(--line); color: var(--ink); background: #fff;
+      transition: transform .12s ease, border-color .12s ease;
+    }
+    .links a.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .links a:hover { transform: translateY(-1px); border-color: var(--blue); }
+
+    /* ── Section ── */
+    section { padding: 44px 0; }
+    .sec-title {
+      font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--sub); margin-bottom: 22px;
+    }
+
+    /* ── Project cards ── */
+    .grid { display: grid; gap: 16px; }
+    .proj {
+      display: flex; gap: 18px; align-items: flex-start; text-decoration: none; color: inherit;
+      background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px;
+      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    }
+    .proj:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(20,22,28,0.07); border-color: #DfE3EA; }
+    .icon {
+      flex-shrink: 0; width: 56px; height: 56px; border-radius: 14px; font-size: 30px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #EAF1FF, #F4F8FF); box-shadow: inset 0 0 0 1px rgba(47,107,255,0.10);
+    }
+    .proj h3 { font-size: 18px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .pill { font-size: 11px; font-weight: 700; color: #128A50; background: #E7F7EE; padding: 2px 9px; border-radius: 999px; }
+    .proj p { font-size: 14.5px; color: var(--sub); margin-top: 5px; }
+    .meta { margin-top: 10px; font-size: 12.5px; color: #9AA0AB; display: flex; gap: 14px; flex-wrap: wrap; }
+    .meta span::before { content: "·"; margin-right: 6px; color: #C7CBD3; }
+    .meta span:first-child::before { content: none; }
+
+    /* soft placeholder for future work */
+    .soon {
+      border-style: dashed; color: var(--sub); justify-content: center; text-align: center;
+      font-size: 14px; font-weight: 600; padding: 26px; display: block;
+    }
+
+    footer { padding: 40px 0 64px; border-top: 1px solid var(--line); margin-top: 24px; color: var(--sub); font-size: 13.5px; }
+    footer a { color: var(--sub); }
+
+    @media (max-width: 520px) {
+      header { padding: 60px 0 40px; }
+      h1 { font-size: 32px; }
+      .proj { padding: 18px; gap: 14px; }
+      .icon { width: 48px; height: 48px; font-size: 26px; }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="logo">🍀</div>
-    <h1>로또당</h1>
-    <p class="tag">로또 6/45 당첨조회 · 통계 · 번호추첨 · 명당찾기</p>
-    <ul>
-      <li><span class="em">📱</span>QR 스캔으로 당첨 즉시 확인</li>
-      <li><span class="em">📊</span>번호 빈도·구간·홀짝 통계 분석</li>
-      <li><span class="em">🎲</span>슬롯머신·럭키드로우 번호 추첨</li>
-      <li><span class="em">🗺️</span>명당(판매점) 지도 찾기</li>
-    </ul>
-    <a class="btn" href="https://apps.apple.com/kr/app/id6790166167">App Store에서 받기</a>
-    <p class="foot">
-      문의: andmore25@naver.com<br />
-      <a href="https://uri-s2.notion.site/39cbd4e3181c8073892dd10221436393">개인정보 처리방침</a>
-    </p>
-  </div>
+  <header>
+    <div class="wrap">
+      <span class="badge">🍀 Indie App Maker</span>
+      <h1>앤모어</h1>
+      <p class="lede">작지만 매일 쓰게 되는 앱을 만듭니다. 데이터로 조금 더 똑똑하게.</p>
+      <div class="links">
+        <a class="primary" href="#works">앱 보기</a>
+        <a href="mailto:andmore25@naver.com">문의하기</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="works">
+      <p class="sec-title">Works</p>
+      <div class="grid">
+
+        <!-- ▼ 앱 카드 하나 = 이 <a>…</a> 블록. 새 앱 추가하려면 통째로 복사해서 내용만 바꾸세요 -->
+        <a class="proj" href="https://apps.apple.com/kr/app/id6790166167">
+          <div class="icon">🍀</div>
+          <div>
+            <h3>로또당 <span class="pill">출시됨</span></h3>
+            <p>로또 6/45 당첨조회 · 통계분석 · 번호추첨 · 명당찾기를 한 앱에.</p>
+            <div class="meta">
+              <span>iOS · Android</span>
+              <span>Flutter</span>
+              <span>App Store에서 받기 →</span>
+            </div>
+          </div>
+        </a>
+        <!-- ▲ 여기까지가 카드 하나 -->
+
+        <span class="proj soon">다음 앱을 준비 중이에요 ✨</span>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    문의 · <a href="mailto:andmore25@naver.com">andmore25@naver.com</a><br />
+    <a href="https://uri-s2.notion.site/39cbd4e3181c8073892dd10221436393">개인정보 처리방침</a>
+    &nbsp;·&nbsp; © 앤모어
+  </footer>
 </body>
 </html>
