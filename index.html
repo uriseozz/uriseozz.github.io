@@ -24,14 +24,24 @@
       background: radial-gradient(900px 360px at 50% -140px, rgba(47,107,255,0.13), transparent);
     }
     .avatar {
-      width: 84px; height: 84px; border-radius: 26px; margin: 0 auto 18px;
-      display: flex; align-items: center; justify-content: center; font-size: 42px;
-      background: linear-gradient(135deg, #EAF1FF, #DDE9FF);
-      box-shadow: 0 10px 24px rgba(47,107,255,0.18);
+      width: 124px; height: 124px; border-radius: 50%; margin: 0 auto 20px;
+      display: block; object-fit: cover; background: #EAF1FF;
+      box-shadow: 0 10px 24px rgba(20,22,28,0.14);
     }
     h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.4px; }
     .handle { color: var(--blue); font-weight: 700; font-size: 14px; margin-top: 4px; }
+    .realname { font-size: 14px; color: #9AA0AB; font-weight: 600; margin-top: 5px; }
+    .mail-top {
+      display: inline-block; margin-top: 7px; font-size: 15px; font-weight: 700;
+      color: var(--blue); text-decoration: none;
+      border-bottom: 1px solid rgba(47,107,255,0.28); padding-bottom: 2px;
+      transition: border-color .13s ease;
+    }
+    .mail-top:hover { border-color: var(--blue); }
     .lede { font-size: 15.5px; color: var(--sub); margin-top: 14px; max-width: 460px; margin-left: auto; margin-right: auto; }
+
+    .lede + .lede { margin-top: 11px; }
+    .lede b { color: #3A4658; font-weight: 700; }
 
     /* ── Stack chips ── */
     .stack { margin: 18px auto 0; display: flex; gap: 7px; flex-wrap: wrap; justify-content: center; max-width: 480px; }
@@ -80,6 +90,7 @@
     .body h3 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
     .body h3 .muted { font-weight: 600; color: #9AA0AB; font-size: 13px; }
     .body p { font-size: 13.5px; color: var(--sub); margin-top: 2px; }
+    .body .story { font-size: 12.5px; color: #9AA0AB; margin-top: 5px; line-height: 1.5; }
     .pill { font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
     .pill.live { color: #128A50; background: #E7F7EE; }
     .pill.soon { color: #B4690E; background: #FCF1E1; }
@@ -88,8 +99,14 @@
     .stat span { font-size: 11px; color: #9AA0AB; }
     .arw { color: #C7CBD3; font-size: 18px; flex-shrink: 0; }
 
-    footer { padding: 34px 0 60px; margin-top: 26px; border-top: 1px solid var(--line); color: var(--sub); font-size: 13px; text-align: center; }
-    footer a { color: var(--sub); }
+    /* .wrap(클래스)이 footer(요소)보다 우선하므로 footer.wrap으로 특정해야 여백이 먹는다 */
+    footer.wrap { padding: 34px 22px 52px; margin: 48px auto 0; border-top: 1px solid var(--line); text-align: center; }
+    .f-mail {
+      font-size: 13.5px; color: var(--sub); text-decoration: none;
+      transition: color .13s ease;
+    }
+    .f-mail:hover { color: var(--blue); }
+    .copy { margin-top: 12px; font-size: 12.5px; color: #A9AEB8; }
 
     @media (max-width: 480px) {
       header { padding: 50px 0 24px; }
@@ -100,10 +117,13 @@
 <body>
   <header>
     <div class="wrap">
-      <div class="avatar">🧑‍💻</div>
+      <img class="avatar" src="icons/avatar.jpg" alt="서크크" />
       <h1>서크크</h1>
-      <div class="handle">@seozz_time</div>
+      <div class="realname">서유리</div>
+      <a class="mail-top" href="mailto:iyoule@naver.com">iyoule@naver.com</a>
       <p class="lede">문과 비전공자에서 5년차 개발자로.<br />회사에서 자바·스프링 백엔드로 4년, 지금은 제 앱과 서비스를 만들어요.</p>
+      <p class="lede">반복되는 일은 자동화하고,<br />주변 사람들의 시간을 아껴주는 서비스를 만들어요.<br />다 같이 적게 일하고 많이 벌면 좋잖아요.</p>
+      <p class="lede"><b>안 되는 일은 없다고 믿어요. 시간을 소중하게 생각합니다.</b></p>
       <div class="stack">
         <span class="chip"><img src="icons/tech/java.svg" alt="" />Java</span>
         <span class="chip"><img src="icons/tech/spring.svg" alt="" />Spring</span>
@@ -134,6 +154,7 @@
           <div class="body">
             <h3>로또당 <span class="pill live">iOS 출시</span> <span class="pill soon">Android 심사중</span></h3>
             <p>로또 6/45 당첨조회 · 통계 · 번호추첨 · 명당찾기</p>
+            <p class="story">남편이 새해 목표로 “로또 60억(?) 당첨”을 적었어요. 그 목표를 응원하려고 만들었습니다.</p>
           </div>
           <div class="arw">→</div>
         </a>
@@ -143,6 +164,7 @@
           <div class="body">
             <h3>블라잇 <span class="pill live">서비스</span></h3>
             <p>블로그 수익화에 최적화된 네이버 블로그 글 작성기</p>
+            <p class="story">목적에 맞는 수익화 글을 쓰려고 만든 도구인데, 친구가 같이 쓰자고 해서 서비스로 열었습니다.</p>
           </div>
           <div class="arw">→</div>
         </a>
@@ -202,11 +224,11 @@
 
       </div>
     </section>
+
   </main>
 
   <footer class="wrap">
-    문의 · <a href="mailto:andmore25@naver.com">andmore25@naver.com</a><br />
-    © 서크크 (seozz)
+    <p class="copy">© 2026 서크크 @seozz_time</p>
   </footer>
 </body>
 </html>
