@@ -94,6 +94,19 @@
     .pill { font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
     .pill.live { color: #128A50; background: #E7F7EE; }
     .pill.soon { color: #B4690E; background: #FCF1E1; }
+    /* 같은 앱인데 스토어가 둘이라, 이 카드만 세로로 펴고 아래에 스토어 버튼을 둔다 */
+    .row.multi { flex-direction: column; align-items: stretch; gap: 13px; }
+    .row.multi:hover { transform: none; box-shadow: none; border-color: var(--line); }
+    .row.multi .head { display: flex; gap: 15px; align-items: center; }
+    .stores { display: flex; gap: 8px; padding-left: 61px; }
+    .store {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      text-decoration: none; font-size: 13px; font-weight: 700; color: #3A4658;
+      background: #F7F8FB; border: 1px solid var(--line); border-radius: 11px; padding: 9px 12px;
+      transition: color .13s ease, border-color .13s ease, background .13s ease;
+    }
+    .store:hover { color: var(--blue); border-color: rgba(47,107,255,0.42); background: #F4F7FF; }
+
     .stat { flex-shrink: 0; text-align: right; line-height: 1.15; }
     .stat b { display: block; font-size: 16px; font-weight: 800; }
     .stat span { font-size: 11px; color: #9AA0AB; }
@@ -111,6 +124,7 @@
     @media (max-width: 480px) {
       header { padding: 50px 0 24px; }
       .row { padding: 13px 14px; gap: 12px; }
+      .stores { padding-left: 0; }
     }
   </style>
 </head>
@@ -149,24 +163,20 @@
       <p class="sec-title">Projects</p>
       <div class="grid">
 
-        <a class="row" href="https://apps.apple.com/kr/app/id6790166167">
-          <div class="ic">🍀</div>
-          <div class="body">
-            <h3>로또당 <span class="muted">iOS</span> <span class="pill live">App Store</span></h3>
-            <p>로또 6/45 QR 당첨확인 · 통계 · 번호추첨 · 명당찾기</p>
-            <p class="story">남편이 새해 목표로 “로또 60억(?) 당첨”을 적었어요. 그 목표를 응원하려고 만들었습니다.</p>
+        <div class="row multi">
+          <div class="head">
+            <div class="ic">🍀</div>
+            <div class="body">
+              <h3>로또당 <span class="pill live">iOS · Android 출시</span></h3>
+              <p>로또 6/45 QR 당첨확인 · 통계 · 번호추첨 · 명당찾기</p>
+              <p class="story">남편이 새해 목표로 “로또 60억(?) 당첨”을 적었어요. 그 목표를 응원하려고 만들었습니다.</p>
+            </div>
           </div>
-          <div class="arw">→</div>
-        </a>
-
-        <a class="row" href="https://play.google.com/store/apps/details?id=com.andmore.lottoDang">
-          <div class="ic">🍀</div>
-          <div class="body">
-            <h3>로또당 <span class="muted">Android</span> <span class="pill live">Google Play</span></h3>
-            <p>로또 6/45 QR 당첨확인 · 통계 · 번호추첨 · 명당찾기</p>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/kr/app/id6790166167">App Store</a>
+            <a class="store" href="https://play.google.com/store/apps/details?id=com.andmore.lottoDang">Google Play</a>
           </div>
-          <div class="arw">→</div>
-        </a>
+        </div>
 
         <a class="row" href="https://blawrite.com">
           <div class="ic br">✍️</div>
