@@ -130,16 +130,6 @@
     .f-mail:hover { color: var(--blue); }
     .copy { margin-top: 12px; font-size: 12.5px; color: #A9AEB8; }
 
-    /* 하단 채널 — Links 카드와 같은 브랜드색을 쓰되 아이콘만 작게 나란히 */
-    .f-sns { display: flex; gap: 11px; justify-content: center; }
-    .f-sns a {
-      width: 34px; height: 34px; border-radius: 11px;
-      display: flex; align-items: center; justify-content: center;
-      opacity: .82; transition: opacity .13s ease, transform .13s ease;
-    }
-    .f-sns a:hover { opacity: 1; transform: translateY(-2px); }
-    .f-sns img { width: 17px; height: 17px; display: block; }
-
     @media (max-width: 480px) {
       header { padding: 50px 0 24px; }
       .row { padding: 13px 14px; gap: 12px; }
@@ -269,13 +259,6 @@
   </main>
 
   <footer class="wrap">
-    <div class="f-sns">
-      <a class="ic ig" href="https://www.instagram.com/seozz_time" aria-label="인스타그램"><img src="icons/instagram.svg" alt="" /></a>
-      <a class="ic yt" href="https://www.youtube.com/@seozz_time" aria-label="유튜브"><img src="icons/youtube.svg" alt="" /></a>
-      <a class="ic nv" href="https://blog.naver.com/iyoule" aria-label="네이버 블로그"><img src="icons/naver.svg" alt="" /></a>
-      <a class="ic ts" href="https://yuricoding.tistory.com/" aria-label="개발 블로그 유리코딩"><img src="icons/tistory.svg" alt="" /></a>
-      <a class="ic gh" href="https://github.com/uriseozz" aria-label="깃허브"><img src="icons/github.svg" alt="" /></a>
-    </div>
     <p class="copy">© 2026 서크크 @seozz_time</p>
   </footer>
 </body>
